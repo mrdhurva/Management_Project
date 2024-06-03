@@ -1,0 +1,63 @@
+.notification{
+    /* border: 2px solid black; */
+    position: relative;
+    left: 75rem;
+    top: 2rem;
+    width: 20rem;
+    height: 3rem;
+}
+
+.notification .notif{
+    position: absolute;
+    top: 1.5rem;
+    left: -0.01rem;
+}
+
+.notification .notificationValue{
+   word-spacing: 20rem;
+}
+
+
+.user .backToHome{
+    position: relative;
+    left: 4rem;
+    background-color: rgba(0, 0, 0, 0.166);
+}
+
+.user .userLogin{
+    position: relative;
+    /* border: 2px solid black; */
+    width: 20rem;
+    border-radius: 0.5rem;
+    left: 50%;
+    transform: translate(-50%,25%);
+    padding: 3rem;
+    box-shadow:0.5rem 0.5rem 0.5rem 0.1rem rgba(0, 0, 0, 0.150),
+               -0.3rem 0.3rem 0.9rem 0.1rem rgba(0, 0, 0, 0.150),
+               -0.3rem -0.3rem 0.9rem 0.1rem rgba(0, 0, 0, 0.150) ;
+}
+
+.user .userLogin .input{
+    width: 20rem;
+    line-height: 2rem;
+}
+
+.user .userLogin .input span{
+    font-size: 0.8rem;
+    position: relative;
+    left: 0.5rem;
+    color: red;
+}
+
+.user .userLogin .input .noId{
+    text-align: end;
+    font-size: 0.95rem;
+    cursor: pointer;
+}
+
+.user .userLogin .loginBtn button{
+    padding: 1rem;
+    width: 10rem;
+}
+
+

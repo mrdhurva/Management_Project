@@ -1,0 +1,54 @@
+
+.homepage{
+    /* border: 2px solid red; */
+    width: 80rem;
+    height: 40rem;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%,7%);
+  }
+
+.homepage .notification{
+    height: 3rem;
+    width: 20rem;
+    position: absolute;
+    left: 67.5rem;
+}
+
+.homepage .notification .noti .login{
+    position: absolute;
+    top: 1.5rem;
+    left: 0rem;
+}
+
+.homepage .card{
+    /* border: 2px solid black; */
+    padding: 3rem;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.185);
+    border-radius: 0.8rem;
+    box-shadow:0.5rem 0.5rem 0.5rem 0.1rem rgba(0, 0, 0, 0.150),
+               -0.3rem 0.3rem 0.9rem 0.1rem rgba(0, 0, 0, 0.150),
+               -0.3rem -0.3rem 0.9rem 0.1rem rgba(0, 0, 0, 0.150) ;
+}
+
+
+.homepage .card .inputField{
+    position: relative;
+}
+
+.homepage .card .inputField .input{
+    width: 20rem;
+}
+
+.homepage .card .inputField .btn{
+    width: 10rem;
+}
+
+.homepage .card .userLogin{
+    padding: 0.5rem;
+    justify-content: center;
+    width: 31.3rem;
+    position: relative;
+    left: 2rem;
+}
