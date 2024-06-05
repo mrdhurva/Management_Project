@@ -7,7 +7,7 @@
     height: 3rem;
 }
 
-.notification .notif{
+.notification #notification{
     position: absolute;
     top: 1.5rem;
     left: -0.01rem;

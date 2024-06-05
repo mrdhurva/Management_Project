@@ -8,10 +8,9 @@ function User() {
 
   const [mobileNumber, setMobileNumber] = useState('');
   const [inputDisplayKey,setInputDisplayKey] = useState('');
-  const [keyId, setKeyId] = useState(false);
-  const [displayKeyOpen,setDisplayKeyOpen] = useState(true);
-  const [displayKey,setDisplayKey] = useState('');
-  const [validKey,setValidKey] = useState('');
+  const [validKey, setValidKey] = useState(false);
+  const [displayValidKey,setDisplayValidKey] = useState('');
+  const [displayValidKeyOpen,setDisplayValidKeyOpen] = useState(true);
   
   const navigate = useNavigate();
 
@@ -28,13 +27,21 @@ function User() {
     console.log(mobileNumber)
   }
 
-  const handleKey = ({ target: { value } }) => {
+  const handleInputKey = ({ target: { value } }) => {
     setInputDisplayKey(value);
     console.log(inputDisplayKey)
   }
 
-  const generateId = () => {
-    setKeyId(true);
+  const handleSnackbar=(event,reason)=>{
+    if (reason === 'clickaway') {
+      return;
+    }
+    setDisplayValidKeyOpen(false);
+    setValidKey(false);
+  }
+
+  const generateValidKey = () => {
+    setValidKey(true);
   }
 
   const generateKey = ()=>{
@@ -61,24 +68,22 @@ function User() {
       }
     }).join('');
 
-   setDisplayKey(formatOtp);
+    setDisplayValidKey(formatOtp);
 
   }
 
   const handleBtn = () => {
-    if(mobileNumber === '9398521580' && inputDisplayKey === displayKey){
+    if(mobileNumber === '9398521580' && inputDisplayKey === displayValidKeyOpen){
       alert('ok')
     }else{
       alert('error')
     }
   }
 
-
-
   return (
     <>
       <Stack className='notification' >
-        {keyId === false ? <Snackbar open={displayKeyOpen} message= {displayKey} className='notif notificationValue'  />  : <Snackbar open={keyId} message='Please contact HR' className='notif' />  }
+        {validKey === false ? <Snackbar open={displayValidKeyOpen} onClose={handleSnackbar} autoHideDuration={5000} message= {displayValidKey} className='notificationValue' id='notification'  />  : <Snackbar open={validKey} onClose={handleSnackbar} autoHideDuration={5000} message='Please contact HR' id='notification'  />  }
       </Stack>
 
       <Stack className='user' >
@@ -90,9 +95,9 @@ function User() {
             <TextField placeholder='Mobile Number' type='tel' value={mobileNumber} onChange={handleMobileNumber} inputProps={{ maxLength: 10 }} />
           </Stack>
           <Stack className='validKey input' >
-            <TextField placeholder='Please enter 6 digits valid key' type='text' value={inputDisplayKey} onChange={handleKey} inputProps={{ maxLength: 6 }} />
+            <TextField placeholder='Please enter 6 digits valid key' type='text' value={inputDisplayKey} onChange={handleInputKey} inputProps={{ maxLength: 6 }} />
             <span variant='body2' >check your mail for valid key</span>
-            <Link alignItems='end' className='noId' onClick={generateId} >Generate valid key</Link>
+            <Link alignItems='end' className='noId' onClick={generateValidKey} >Generate valid key</Link>
           </Stack>
           <Stack className='loginBtn' >
             <Button type='submit' variant='contained' onClick={handleBtn}  >Validate</Button>

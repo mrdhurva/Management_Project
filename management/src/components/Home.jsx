@@ -16,8 +16,6 @@ function Home() {
     userDetails();
   }, [])
 
-  // console.log(userInformation)
-
   async function userDetails() {
     const apiCall = await axios.get(`http://localhost:8000/employees`);
     const apiData = await apiCall.data;
@@ -31,6 +29,7 @@ function Home() {
 
   const handleInput = ({ target: { value } }) => {
     setInputValue(value);
+
   }
 
   const handleSuccessClose = (event, reason) => {
@@ -44,21 +43,11 @@ function Home() {
   const checkDataBase = () => {
     if (userLoginDetails.includes(inputValue)) {
       setSuccessToastOpen(true);
-      // checkingDetails()
       SendData();
     } else {
       setFailedToastOpen(true);
     }
-  }
-
-  const checkingDetails = ()=>{
-   const data = userInformation.find(({LoginId})=> LoginId === inputValue);
-   if(data){
-    const {Name} = data;
-    console.log(Name)
-   }else{
-    console.log(false)
-   }
+    setInputValue('');
   }
 
   const SendData = async()=>{
