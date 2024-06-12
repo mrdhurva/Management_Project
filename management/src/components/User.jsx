@@ -8,14 +8,16 @@ function User() {
 
   const [mobileNumber, setMobileNumber] = useState('');
   const [inputDisplayKey,setInputDisplayKey] = useState('');
-  const [validKey, setValidKey] = useState(false);
   const [displayValidKey,setDisplayValidKey] = useState('');
+  const [validKey, setValidKey] = useState(false);
   const [displayValidKeyOpen,setDisplayValidKeyOpen] = useState(true);
   
   const navigate = useNavigate();
 
   useEffect(()=>{
     generateKey();
+
+    
   },[])
 
   const backToHomeBtn = () => {
@@ -83,7 +85,7 @@ function User() {
   return (
     <>
       <Stack className='notification' >
-        {validKey === false ? <Snackbar open={displayValidKeyOpen} onClose={handleSnackbar} autoHideDuration={5000} message= {displayValidKey} className='notificationValue' id='notification'  />  : <Snackbar open={validKey} onClose={handleSnackbar} autoHideDuration={5000} message='Please contact HR' id='notification'  />  }
+        {validKey === true ? <Snackbar open={validKey} onClose={handleSnackbar} autoHideDuration={5000} message='Please contact HR' id='notification'  /> :  <Snackbar open={displayValidKeyOpen} onClose={handleSnackbar} autoHideDuration={5000} message= {displayValidKey} className='notificationValue' id='notification'  />  }
       </Stack>
 
       <Stack className='user' >

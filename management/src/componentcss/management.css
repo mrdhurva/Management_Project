@@ -1,7 +1,41 @@
+.management .loginNotification{
+    height: 3rem;
+    width: 20rem;
+    position: absolute;
+    left: 75rem;
+    top: 2rem;
+}
+
+.management .loginNotification .login{
+    position: absolute;
+    left: 0rem;
+    top: 1.5rem;
+}
+
+.management .loginDetails{
+    box-shadow:0.5rem 0.5rem 0.5rem 0.1rem rgba(0, 0, 0, 0.150),
+    -0.3rem 0.3rem 0.9rem 0.1rem rgba(0, 0, 0, 0.150),
+    -0.3rem -0.3rem 0.9rem 0.1rem rgba(0, 0, 0, 0.150) ;
+    position: relative;
+    height: 15rem;
+    width: 30rem;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%,50%);
+    border-radius: 1rem;
+    padding: 2rem;
+}
+
+.management .loginInput{
+    position: relative;
+    top: 35%;
+}
+
 .management .loginInput .input{
     width: 20rem;
 }
 
-.management .loginInput button{
+.management .loginInput .submitButton button{
     width: 5rem;
+    padding: 0.5rem;
 }
