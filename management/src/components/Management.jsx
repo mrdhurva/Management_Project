@@ -1,3 +1,4 @@
+import { Outlet, useNavigate } from 'react-router-dom';
 import { Button, Stack, TextField, Typography, Snackbar } from '@mui/material'
 import React, { useState } from 'react';
 import { } from '../componentcss/management.css'
@@ -7,6 +8,8 @@ function Management() {
   const [successLogin,setSuccessLogin] = useState(false);
   const [failLogin,setFailLogin] = useState(false);
 
+  const homeNavigate = useNavigate();
+
   const handleInputValue = ({target:{value}})=>{
     setInputValue(value);
   }
@@ -14,6 +17,7 @@ function Management() {
   const handleVerification =()=>{
     if(inputValue === 'hello'){
       setSuccessLogin(true);
+      homeNavigate('/management/Home');
     }else{
       setFailLogin(true);
     }
@@ -50,6 +54,7 @@ function Management() {
           </Stack>
         </Stack>
       </Stack>
+      <Outlet/>
     </Stack>
   )
 }
