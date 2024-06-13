@@ -17,7 +17,9 @@ function Management() {
   const handleVerification =()=>{
     if(inputValue === 'hello'){
       setSuccessLogin(true);
-      homeNavigate('/management/Home');
+      setTimeout(()=>{
+        homeNavigate('/management/Home');
+      },2000)
     }else{
       setFailLogin(true);
     }

@@ -1,0 +1,25 @@
+.managementHome{
+    /* height: fit-content; */
+    height: 100vh;
+    background-color: rgba(255, 68, 0, 0.704);
+}
+
+.managementHome .managementNavbar{
+    padding: 2rem;
+    background-color: white;
+    color: black;
+    margin-top: 2rem;
+    position: sticky;
+    top: 0;
+    font-size: 1.5rem;
+}
+
+.managementHome .managementNavbar .logo .linkComponent,
+.navigation .linkComponent{
+text-decoration: none;
+}
+
+.managementHome .managementNavbar .logo{
+    position: relative;
+    left: 5rem;
+}
